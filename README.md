@@ -17,7 +17,7 @@
   
   ## License
   
-  gpl-3.0
+  mit
   
   ---
   
