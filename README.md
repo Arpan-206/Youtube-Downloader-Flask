@@ -27,5 +27,5 @@
   
   For any questions, please contact me with the information below:
  
-  GitHub: [@Arpan-206](https://api.github.com/users/Arpan-206)
+  GitHub: [@Arpan-206](https://github.com/Arpan-206)
   
