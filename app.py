@@ -1,0 +1,37 @@
+from flask import Flask, request, send_file, render_template
+from pytube import YouTube
+import logging
+import sys
+import os
+from hello import timed_delete
+from threading import Timer
+timed_delete()
+logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
+app = Flask(__name__)
+
+@app.route("/hello")
+def index():
+    return "Hello World!"
+@app.route("/")
+def youtube_downloader():
+    return render_template('index.html')
+ 
+@app.route("/download_video", methods=["GET","POST"])
+def download_video():
+    """
+    First pytube downloads the file locally in pythonanywhere:
+    /home/your_username/video_name.mp4
+ 
+    Then use Flask's send_file() to download the video 
+    to the user's Downloads folder. 
+    """
+    try:
+        youtube_url = request.form["URL"]
+        local_download_path = YouTube(youtube_url).streams[0].download()
+        fname = local_download_path.split("//")[-1]
+
+        return send_file(fname, as_attachment=True)
+    except:
+        logging.exception("Failed download")
+        return render_template('download_failed.html')
+
