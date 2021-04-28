@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file, render_template
+from flask import Flask, request, send_file, render_template, url_for
 from pytube import YouTube
 import logging
 import sys
@@ -14,7 +14,8 @@ def index():
     return "Hello World!"
 @app.route("/")
 def youtube_downloader():
-    return render_template('index.html')
+    my_css = url_for('static', filename='cover.css')
+    return render_template('index.html', css_path= my_css)
  
 @app.route("/download_video", methods=["GET","POST"])
 def download_video():
