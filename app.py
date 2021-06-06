@@ -1,5 +1,5 @@
 from flask import Flask, request, send_file, render_template, url_for
-from pytube import YouTube
+from pytube
 import logging
 import sys
 import os
@@ -9,9 +9,6 @@ timed_delete()
 logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 app = Flask(__name__)
 
-@app.route("/hello")
-def index():
-    return "Hello World!"
 @app.route("/")
 def youtube_downloader():
     my_css = url_for('static', filename='cover.css')
@@ -27,7 +24,7 @@ def download_video():
     to the user's Downloads folder. 
     """
     try:
-        local_download_path = YouTube("https://www.youtube.com/watch?v=b1JlYZQG3lI").get_highest_resolution().download()
+        local_download_path = pytube.YouTube("https://www.youtube.com/watch?v=b1JlYZQG3lI").get_highest_resolution().download()
         fname = local_download_path.split("//")[-1]
 
         return send_file(fname, as_attachment=True)
