@@ -28,4 +28,5 @@ def download_video():
         fname = local_download_path.split("//")
 
         return send_file(fname, as_attachment=True)
-
+    except:
+        print("Error")
