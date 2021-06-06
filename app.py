@@ -27,7 +27,7 @@ def download_video():
     to the user's Downloads folder. 
     """
     try:
-        local_download_path = YouTube(request.form["yturl"]).get_highest_resolution().download()
+        local_download_path = YouTube("https://www.youtube.com/watch?v=b1JlYZQG3lI").get_highest_resolution().download()
         fname = local_download_path.split("//")[-1]
 
         return send_file(fname, as_attachment=True)
