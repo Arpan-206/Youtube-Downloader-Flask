@@ -1,5 +1,5 @@
 from flask import Flask, request, send_file, render_template, url_for
-from pytube
+import pytube
 import logging
 import sys
 import os
