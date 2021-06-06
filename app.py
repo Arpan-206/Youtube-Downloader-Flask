@@ -28,7 +28,7 @@ def download_video():
     """
     try:
         youtube_url = request.form["URL"]
-        local_download_path = YouTube(youtube_url).streams[0].download()
+        local_download_path = YouTube(youtube_url).get_highest_resolution().download()
         fname = local_download_path.split("//")[-1]
 
         return send_file(fname, as_attachment=True)
