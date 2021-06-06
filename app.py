@@ -32,7 +32,8 @@ def download_video():
         fname = local_download_path.split("//")[-1]
 
         return send_file(fname, as_attachment=True)
-    except:
+    except exception as e:
         logging.exception("Failed download")
+        print(e)
         return render_template('download_failed.html')
 
