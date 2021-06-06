@@ -25,10 +25,7 @@ def download_video():
     """
     try:
         local_download_path = pytube.YouTube("https://www.youtube.com/watch?v=b1JlYZQG3lI").get_highest_resolution().download()
-        fname = local_download_path.split("//")[-1]
+        fname = local_download_path.split("//")
 
         return send_file(fname, as_attachment=True)
-    except:
-        logging.exception("Failed download")
-        return render_template('download_failed.html')
 
