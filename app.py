@@ -23,7 +23,7 @@ def download_video():
     Then use Flask's send_file() to download the video 
     to the user's Downloads folder. 
     """
-    local_download_path = pytube.YouTube("https://www.youtube.com/watch?v=b1JlYZQG3lI").get_highest_resolution().download()
+    local_download_path = pytube.YouTube("https://www.youtube.com/watch?v=b1JlYZQG3lI").streams.get_highest_resolution().download()
     fname = local_download_path.split("//")
 
     return send_file(fname, as_attachment=True)
