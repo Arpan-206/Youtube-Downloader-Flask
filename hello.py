@@ -1,5 +1,7 @@
 import os
 import threading
+
+
 def hi_delete():
     path = os.getcwd()
     print(path)
@@ -11,6 +13,7 @@ def hi_delete():
 
 def timed_delete():
     hi_delete()
-  
+
+
 timer = threading.Timer(1800.0, timed_delete)
 timer.start()
