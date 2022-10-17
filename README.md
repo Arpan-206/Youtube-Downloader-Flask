@@ -23,9 +23,9 @@
   
   ## Questions?
   
-  ![Developer Profile Picture](https://avatars.githubusercontent.com/u/64347914?v=4) 
-  
   For any questions, please contact me with the information below:
  
   GitHub: [@Arpan-206](https://github.com/Arpan-206)
+  
+  Email: [arpan@hackersreboot.tech](mailto:arpan@hackersreboot.tech)
   
