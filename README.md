@@ -17,9 +17,8 @@
   
   ## License
   
-  mit
+  [MIT](https://choosealicense.com/licenses/mit/)
   
-  ---
   
   ## Questions?
   
